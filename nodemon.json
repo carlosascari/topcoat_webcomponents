@@ -1,0 +1,13 @@
+{
+  "verbose": false,
+  "ignore": ["node_modules/*"],
+  "watch": [
+    "index.html",
+    "build.js",
+    "src/*"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "html less js svg css"
+}

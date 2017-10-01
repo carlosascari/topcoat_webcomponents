@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "topcoat_webcomponents",
+  "version": "0.2.0",
+  "description": "Topcoat webcomponent collection",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "dev": "nodemon build.js"
+  },
+  "keywords": [],
+  "author": "Carlos Ascari Gutierrez Hermosillo",
+  "license": "MIT",
+  "devDependencies": {
+    "swde": "^0.5.0"
+  },
+  "dependencies": {
+    "swde": "^0.5.0"
+  }
+}

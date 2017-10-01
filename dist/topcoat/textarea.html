@@ -1,0 +1,228 @@
+<dom-module id="topcoat-textarea">
+    <template>
+    <style type="text/css">
+      :host {
+  display: block;
+}
+.textarea {
+  box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  vertical-align: top;
+  resize: none;
+  outline: none;
+}
+.textarea:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+.textarea,
+.topcoat-textarea,
+.topcoat-textarea--large {
+  box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  vertical-align: top;
+  resize: none;
+  outline: none;
+  max-width: 100%;
+}
+.textarea:disabled,
+.topcoat-textarea:disabled,
+.topcoat-textarea--large:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/* topdoc
+  name: Textarea
+  description: A whole area, just for text.
+  modifiers:
+    :disabled: Disabled state
+  markup:
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
+*/
+.topcoat-textarea,
+.topcoat-textarea--large {
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  border-radius: 6px;
+  line-height: 3rem;
+  border: 1px solid #9daca9;
+  background-color: #fff;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+  color: #454545;
+  letter-spacing: 1px;
+}
+.topcoat-textarea:focus,
+.topcoat-textarea--large:focus {
+  background-color: #fff;
+  color: #454545;
+  border: 1px solid #0036ff;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+.topcoat-textarea:disabled::-webkit-input-placeholder {
+  color: #454545;
+}
+.topcoat-textarea:disabled::-moz-placeholder {
+  color: #454545;
+}
+.topcoat-textarea:disabled:-ms-input-placeholder {
+  color: #454545;
+}
+/* topdoc
+  name: Large Textarea
+  description: A whole area, just for text; now available in large.
+  modifiers:
+    :disabled: Disabled state
+  markup:
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
+*/
+.topcoat-textarea--large {
+  font-size: 3rem;
+  line-height: 4.375rem;
+}
+.topcoat-textarea--large:disabled {
+  color: #454545;
+}
+.topcoat-textarea--large:disabled::-webkit-input-placeholder {
+  color: #454545;
+}
+.topcoat-textarea--large:disabled::-moz-placeholder {
+  color: #454545;
+}
+.topcoat-textarea--large:disabled:-ms-input-placeholder {
+  color: #454545;
+}
+
+    </style>
+
+<textarea class$="[[className(class, large)]]" disabled$="[[disabled]]" placeholder="[[placeholder]]" value="{{value}}"></textarea>
+
+  </template>
+    <script type="text/javascript">
+        class TopcoatTextarea extends Polymer.mixinBehaviors([], Polymer.Element) {
+            static get is() {
+                return 'topcoat-textarea';
+            }
+            static get properties() {
+                return {
+                    disabled: {
+                        type: Boolean,
+                        value: false
+                    },
+                    placeholder: {
+                        type: String,
+                        value: ''
+                    },
+                    value: {
+                        type: String,
+                        value: ''
+                    },
+                    class: {
+                        type: String,
+                            value: ''
+                    },
+                    large: {
+                        type: Boolean,
+                        value: false
+                    },
+                }
+            }
+
+            /**
+             * @controuctor
+             */
+            constructor() {
+                super();
+                this.initialAttachment = false;
+            }
+
+            /**
+             * Attached Lifecycle
+             */
+            attached() {
+                if (!this.initialAttachment) {
+                    this.initialAttachment = true;
+                }
+            }
+
+            className(className, large) {
+                if (large) {
+                    return `topcoat-textarea--large ${ className }`.trim();
+                } else {
+                    return `topcoat-textarea ${ className }`.trim();
+                }
+            }
+        }
+
+        // Register element
+        customElements.define(TopcoatTextarea.is, TopcoatTextarea);
+    </script>
+</dom-module>
