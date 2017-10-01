@@ -1,4 +1,19 @@
 node_modules/
-bower_components/
 topcoat-design.png
 *.log
+
+#
+# Ignore all bower components except for those
+# used by index.html to showcase components.
+#
+
+/bower_components/*
+
+/bower_components/webcomponentsjs/*
+!/bower_components/webcomponentsjs/
+!/bower_components/webcomponentsjs/webcomponents-lite.js
+
+/bower_components/iron-demo-helpers/*
+!/bower_components/iron-demo-helpers/
+!bower_components/iron-demo-helpers/demo-pages-shared-styles.html
+!bower_components/iron-demo-helpers/demo-snippet.html
