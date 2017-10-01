@@ -21,6 +21,7 @@ topcoat-design.png
 /bower_components/polymer/*
 !/bower_components/polymer/
 !/bower_components/polymer/lib
+!/bower_components/polymer/polymer.html
 
 /bower_components/iron-flex-layout/*
 !/bower_components/iron-flex-layout/
