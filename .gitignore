@@ -22,6 +22,14 @@ topcoat-design.png
 !/bower_components/polymer/
 !/bower_components/polymer/lib
 !/bower_components/polymer/polymer.html
+!/bower_components/polymer/polymer-element.html
+
+/bower_components/shadycss/*
+!/bower_components/shadycss/
+!/bower_components/shadycss/apply-shim.html
+!/bower_components/shadycss/apply-shim.min.js
+!/bower_components/shadycss/custom-style-interface.html
+!/bower_components/shadycss/custom-style-interface.min.js
 
 /bower_components/iron-flex-layout/*
 !/bower_components/iron-flex-layout/
