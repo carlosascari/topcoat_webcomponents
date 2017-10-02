@@ -5,54 +5,81 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>Topcoat Webcomponents</title>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <!-- <link rel="import" href="bower_components/iron-demo-helpers/demo-pages-shared-styles.html"> -->
     <link rel="import" href="bower_components/iron-demo-helpers/demo-snippet.html">
 
-    <!-- Components -->
-    <link rel="import" href="dist/topcoat/button.html">
-    <link rel="import" href="dist/topcoat/checkbox.html">
-    <link rel="import" href="dist/topcoat/icon-button">
-    <link rel="import" href="dist/topcoat/list.html">
-    <link rel="import" href="dist/topcoat/list-header.html">
-    <link rel="import" href="dist/topcoat/list-container.html">
-    <link rel="import" href="dist/topcoat/list-item.html">
-    <link rel="import" href="dist/topcoat/navigation-bar.html">
-    <link rel="import" href="dist/topcoat/notification">
-    <link rel="import" href="dist/topcoat/radio-button">
-    <link rel="import" href="dist/topcoat/range">
-    <link rel="import" href="dist/topcoat/search-input">
-    <link rel="import" href="dist/topcoat/switch">
-    <link rel="import" href="dist/topcoat/tab-bar">
-    <link rel="import" href="dist/topcoat/tab">
-    <link rel="import" href="dist/topcoat/text-input">
-    <link rel="import" href="dist/topcoat/textarea">
-
+    <link rel="import" href="dist/topcoat/theme-mobile-light.html">
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
+      <style is="custom-style" include="topcoat-theme"></style>
     </custom-style>
+    <style type="text/css">
+      body { overflow-x: hidden; }
+      main, .main {
+        max-width: 800px;
+        margin: auto;
+        padding: 0 16px;
+      }
+      header {
+        width: 100%;
+        height: 80px;
+        background-color: #4ca1e4;
+        color: white;
+        padding: 0 24px;
+        margin-bottom: 32px;
+      }
+      header h1 {
+        margin: 0; 
+        display: inline-block;
+        line-height: 2.5;
+      }
+      header select {
+        background: white;
+        padding: 6px 12px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 25px;
+        margin-left: 16px;
+      }
+      h3 {
+        color: #334;
+        padding: 0 24px;
+      }
+      div[row] { padding: 8px 0; }
+    </style>
   </head>
   <body>
-    <div class="vertical-section-container centered">
-
-      <h1>Topcoat Mobile Light</h1>
+    <header>
+      <div class="main">
+        <h1>Topcoat Theme:</h1>
+        <select disabled>
+          <option>Mobile Light</option>
+          <option>Mobile Dark</option>
+          <option>Desktop Light</option>
+          <option>Desktop Dark</option>
+        </select>
+      </div>
+    </header>
+    <main>
 
       <div>
         <h3>Button</h3>
         <demo-snippet>
           <template>
-            <div>
+            <link rel="import" href="dist/topcoat/button.html">
+
+            <div row>
               <topcoat-button>Button</topcoat-button>
               <topcoat-button disabled>Button</topcoat-button>
               <topcoat-button quiet>Button</topcoat-button>
               <topcoat-button quiet disabled>Button</topcoat-button>
             </div>
-            <div>
+            <div row>
               <topcoat-button large>Button</topcoat-button>
               <topcoat-button large disabled>Button</topcoat-button>
               <topcoat-button large quiet>Button</topcoat-button>
               <topcoat-button large quiet disabled>Button</topcoat-button>
             </div>
-            <div>
+            <div row>
               <topcoat-button cta>Button</topcoat-button>
               <topcoat-button cta disabled>Button</topcoat-button>
               <topcoat-button cta large>Button</topcoat-button>
@@ -66,6 +93,8 @@
         <h3>Checkbox</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/checkbox.html">
+
             <topcoat-checkbox></topcoat-checkbox>
             <topcoat-checkbox disabled></topcoat-checkbox>
           </template>
@@ -76,6 +105,8 @@
         <h3>Icon Button</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/icon-button.html">
+
             <topcoat-icon-button></topcoat-icon-button>
             <topcoat-icon-button disabled></topcoat-icon-button>
           </template>
@@ -86,6 +117,11 @@
         <h3>List</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/list.html">
+            <link rel="import" href="dist/topcoat/list-item.html">
+            <link rel="import" href="dist/topcoat/list-header.html">
+            <link rel="import" href="dist/topcoat/list-container.html">
+
             <topcoat-list>
               <topcoat-list-header>Category</topcoat-list-header>
               <topcoat-list-container>
@@ -103,6 +139,8 @@
         <h3>Navigation Bar</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/navigation-bar.html">
+
             <topcoat-navigation-bar>Header</topcoat-navigation-bar>
           </template>
         </demo-snippet>
@@ -112,6 +150,8 @@
         <h3>Notification</h3>
         <demo-snippet>
           <template>
+          <link rel="import" href="dist/topcoat/notification.html">
+
             <topcoat-notification>84</topcoat-notification>
           </template>
         </demo-snippet>
@@ -121,6 +161,8 @@
         <h3>Radio Button</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/radio-button.html">
+
             <topcoat-radio-button></topcoat-radio-button>
             <topcoat-radio-button left-label="Checked" checked></topcoat-radio-button>
             <topcoat-radio-button right-label="Disabled" disabled></topcoat-radio-button>
@@ -132,6 +174,8 @@
         <h3>Range</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/range.html">
+
             <topcoat-range></topcoat-range>
             <topcoat-range value="50"></topcoat-range>
             <topcoat-range disabled></topcoat-range>
@@ -143,6 +187,8 @@
         <h3>Search Input</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/search-input.html">
+
             <topcoat-search-input></topcoat-search-input>
           </template>
         </demo-snippet>
@@ -152,6 +198,8 @@
         <h3>Switch</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/switch.html">
+
             <topcoat-switch></topcoat-switch>
             <topcoat-switch checked></topcoat-switch>
             <topcoat-switch disabled></topcoat-switch>
@@ -163,6 +211,9 @@
         <h3>Tab Bar</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/tab-bar.html">
+            <link rel="import" href="dist/topcoat/tab.html">
+
             <topcoat-tab-bar>
               <topcoat-tab name='tab-1'>Tab A</topcoat-tab>
               <topcoat-tab name='tab-1'>Tab B</topcoat-tab>
@@ -176,6 +227,8 @@
         <h3>Text Input</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/text-input.html">
+
             <topcoat-text-input placeholder="type here" value="has been typed"></topcoat-text-input>
             <topcoat-text-input placeholder="type here" fail></topcoat-text-input>
             <topcoat-text-input placeholder="type here" disabled></topcoat-text-input>
@@ -190,6 +243,8 @@
         <h3>Textarea</h3>
         <demo-snippet>
           <template>
+            <link rel="import" href="dist/topcoat/textarea.html">
+
             <topcoat-textarea placeholder="type here" value="has been typed"></topcoat-textarea>
             <topcoat-textarea placeholder="type here" disabled></topcoat-textarea>
             <topcoat-textarea large placeholder="type here" value="has been typed"></topcoat-textarea>
@@ -197,6 +252,6 @@
           </template>
         </demo-snippet>
       </div>
-    </div>
+    </main>
   </body>
 </html>

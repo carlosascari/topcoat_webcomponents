@@ -5,6 +5,66 @@ const swde = require('swde');
 Promise.all([
 
   swde({
+    src: './src/topcoat/theme-desktop-light',
+    dist: './dist/topcoat',
+    html: {
+      mustache: { tags: ['%%', '%%'] },
+      pages: {
+        'theme-desktop-light': {
+          path: 'component.html',
+          layout: 'layout.html'
+        }
+      }
+    },
+    less: { noFile: true }
+  }),
+
+  swde({
+    src: './src/topcoat/theme-desktop-dark',
+    dist: './dist/topcoat',
+    html: {
+      mustache: { tags: ['%%', '%%'] },
+      pages: {
+        'theme-desktop-dark': {
+          path: 'component.html',
+          layout: 'layout.html'
+        }
+      }
+    },
+    less: { noFile: true }
+  }),
+
+  swde({
+    src: './src/topcoat/theme-mobile-light',
+    dist: './dist/topcoat',
+    html: {
+      mustache: { tags: ['%%', '%%'] },
+      pages: {
+        'theme-mobile-light': {
+          path: 'component.html',
+          layout: 'layout.html'
+        }
+      }
+    },
+    less: { noFile: true }
+  }),
+
+  swde({
+    src: './src/topcoat/theme-mobile-dark',
+    dist: './dist/topcoat',
+    html: {
+      mustache: { tags: ['%%', '%%'] },
+      pages: {
+        'theme-mobile-dark': {
+          path: 'component.html',
+          layout: 'layout.html'
+        }
+      }
+    },
+    less: { noFile: true }
+  }),
+
+  swde({
     src: './src/topcoat/button',
     dist: './dist/topcoat',
     html: {
